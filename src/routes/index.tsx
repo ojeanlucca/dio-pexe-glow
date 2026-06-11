@@ -1,29 +1,41 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "../components/Header";
+import { HeroSection } from "../components/HeroSection";
+import { AboutSection } from "../components/AboutSection";
+import { TestimonialsSection } from "../components/TestimonialsSection";
+import { ContactSection } from "../components/ContactSection";
+import { Footer } from "../components/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Stúdio Pexe Tattoo — Tatuagem & Piercing Profissional" },
+      {
+        name: "description",
+        content:
+          "Stúdio profissional de tatuagem e piercing. Arte autoral, higiene hospitalar e atendimento exclusivo. Agende sua sessão pelo WhatsApp.",
+      },
+      { property: "og:title", content: "Stúdio Pexe Tattoo" },
+      {
+        property: "og:description",
+        content: "A arte que você carrega para sempre. Tatuagem e piercing com excelência.",
+      },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      <Header />
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <TestimonialsSection />
+        <ContactSection />
+      </main>
+      <Footer />
     </div>
   );
 }
